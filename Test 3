@@ -1,0 +1,16 @@
+# Тест 3: Проверка функциональности кнопки
+def test_button_click():
+    driver.get("https://example.com")
+    button = driver.find_element(By.XPATH, "//a[text()='More information...']")
+    ActionChains(driver).move_to_element(button).click(button).perform()
+    time.sleep(2)  # Ожидание для загрузки новой страницы, если требуется
+    assert "iana.org" in driver.current_url, "Клик по кнопке не привел к ожидаемой странице"
+    print("Тест 3 пройден: Кнопка функционирует корректно")
+
+# Запуск тестов
+test_page_load()
+test_element_presence()
+test_button_click()
+
+# Закрытие браузера
+driver.quit()
