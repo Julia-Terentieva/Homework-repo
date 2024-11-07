@@ -1,0 +1,13 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+driver = webdriver.Chrome() 
+driver.maximize_window()
+
+# Тест 1: Проверка успешной загрузки страницы
+def test_page_load():
+    driver.get("https://example.com")
+    assert "Example Domain" in driver.title, "Страница не загрузилась корректно или заголовок не совпадает"
+    print("Тест 1 пройден: Страница успешно загрузилась")
