@@ -1,0 +1,9 @@
+# Тест 2: Проверка наличия элемента на странице
+def test_element_presence():
+    driver.get("https://example.com")
+    try:
+        element = driver.find_element(By.XPATH, "//h1[text()='Example Domain']")
+        assert element.is_displayed(), "Элемент не найден на странице"
+        print("Тест 2 пройден: Элемент найден на странице")
+    except:
+        print("Элемент отсутствует на странице")
